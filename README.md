@@ -7,11 +7,11 @@ run `./gradlew build`
 
 Test
 ----
-run `./graldew test`
+run `./gradlew test`
 
 Run Service
 -----------
-run `./gradlw run`. This will start the service on port 8080 in listening mode.
+run `./gradlew run`. This will start the service on port 8080 in listening mode.
 Any changes made would automatically restart the service.
 
 Package ShadowJar
