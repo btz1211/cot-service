@@ -1,13 +1,15 @@
 package routers
 
-import io.vertx.core.Vertx.vertx
+import io.vertx.core.Vertx
 import io.vertx.ext.web.Router
+import io.vertx.ext.web.handler.StaticHandler
 
-object MainRouter {
-    val router = Router.router(vertx())
+class MainRouter (vertx: Vertx){
+    val router = Router.router(vertx)
 
     init {
-        router.mountSubRouter("/ping", HealthRouter.router)
-        router.mountSubRouter("/circles", CircleRouter.router)
+        router.route().handler(StaticHandler.create());
+        router.mountSubRouter("/ping", HealthRouter(vertx).router)
+        router.mountSubRouter("/circles", CircleRouter(vertx).router)
     }
 }

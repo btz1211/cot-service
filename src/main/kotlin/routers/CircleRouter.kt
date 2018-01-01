@@ -4,8 +4,8 @@ import controllers.CircleController
 import io.vertx.core.Vertx
 import io.vertx.ext.web.Router
 
-object CircleRouter {
-    val router = Router.router(Vertx.vertx())
+class CircleRouter(vertx: Vertx) {
+    val router = Router.router(vertx)
 
     init {
         val controller = CircleController()

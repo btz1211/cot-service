@@ -1,0 +1,13 @@
+#%RAML 1.0
+title: Circle of Trust API
+version: V1
+baseUri: http://localhost:8080/{version}
+/ping:
+  get:
+    responses:
+      200:
+        body:
+          text/plain:
+            example: "OK"
+
+

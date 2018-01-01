@@ -4,8 +4,8 @@ import controllers.HealthController
 import io.vertx.core.Vertx
 import io.vertx.ext.web.Router
 
-object HealthRouter {
-    val router = Router.router(Vertx.vertx())
+class HealthRouter (vertx: Vertx) {
+    val router = Router.router(vertx)
 
     init {
         val controller = HealthController()
