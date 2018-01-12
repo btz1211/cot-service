@@ -1,7 +1,6 @@
-package server
+package com.cot.verticles
 
 import io.vertx.core.AbstractVerticle
-import io.vertx.ext.web.handler.StaticHandler
 import routers.MainRouter
 
 
@@ -13,4 +12,5 @@ class Server: AbstractVerticle(){
         //routes
         server.requestHandler(MainRouter(vertx).router::accept).listen(8080)
     }
+
 }

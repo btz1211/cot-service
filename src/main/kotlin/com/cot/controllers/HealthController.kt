@@ -1,4 +1,4 @@
-package controllers
+package com.cot.controllers
 
 import io.vertx.ext.web.RoutingContext
 

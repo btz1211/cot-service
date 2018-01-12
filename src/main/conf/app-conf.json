@@ -1,0 +1,9 @@
+{
+  "db_config" : {
+    "url": "jdbc:mysql://localhost:3306/circle_of_trust",
+    "driver_class": "com.mysql.jdbc.Driver",
+    "user": "root",
+    "password": "",
+    "max_pool_size": 30
+  }
+}

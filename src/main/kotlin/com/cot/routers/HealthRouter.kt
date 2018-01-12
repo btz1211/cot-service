@@ -1,6 +1,6 @@
 package routers
 
-import controllers.HealthController
+import com.cot.controllers.HealthController
 import io.vertx.core.Vertx
 import io.vertx.ext.web.Router
 
