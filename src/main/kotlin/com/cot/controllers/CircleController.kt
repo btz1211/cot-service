@@ -2,6 +2,7 @@ package com.cot.controllers
 
 import com.cot.daos.CircleDao
 import io.vertx.ext.web.RoutingContext
+import io.vertx.kotlin.core.json.json
 
 class CircleController(val circleDao : CircleDao) {
     fun getCircles(context: RoutingContext) {
@@ -13,17 +14,19 @@ class CircleController(val circleDao : CircleDao) {
         val response = context.response()
 
         circleDao.getCircle(circleId, {result ->
-            println("---succeeded----${result}")
 
             when {
                 result.succeeded() -> {
-                    println("---succeeded----${result}")
+                    val data = result.result().rows
 
-                    response.setStatusCode(200).end(result.result().first().toString())
+                    when {
+
+                        data.isEmpty() -> response.setStatusCode(404).end("Circle with id[$circleId] does not exist")
+                        else -> response.setStatusCode(200).end(data.first().encode())
+                    }
+
                 }
                 result.failed() -> {
-                    println("----failed---${result}")
-
                     response.setStatusCode(404).end(result.cause().localizedMessage)
                 }
             }
