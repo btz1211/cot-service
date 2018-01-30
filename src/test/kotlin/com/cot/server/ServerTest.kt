@@ -1,16 +1,15 @@
 package com.cot.server
 
-import com.cot.verticles.Server
 import io.vertx.core.DeploymentOptions
 import org.junit.Test
 import org.junit.Before
 import org.junit.After
 import org.junit.runner.RunWith
 import io.vertx.core.Vertx
-import io.vertx.core.json.Json
 import io.vertx.core.json.JsonObject
 import io.vertx.ext.unit.TestContext;
 import io.vertx.ext.unit.junit.VertxUnitRunner
+import kotlin.test.assertTrue
 
 
 @RunWith(VertxUnitRunner::class)
@@ -40,7 +39,7 @@ class ServerTest {
         vertx.createHttpClient().getNow(8080, "localhost", "/ping"
         ) { response ->
             response.handler { body ->
-                context.assertTrue(body.toString().contains("OK"))
+                assertTrue(body.toString().contains("OK"))
                 async.complete()
             }
         }

@@ -1,4 +1,4 @@
-package com.cot.verticles
+package com.cot.server
 
 import io.vertx.core.AbstractVerticle
 import routers.MainRouter

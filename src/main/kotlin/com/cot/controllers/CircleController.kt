@@ -2,7 +2,6 @@ package com.cot.controllers
 
 import com.cot.daos.CircleDao
 import io.vertx.ext.web.RoutingContext
-import io.vertx.kotlin.core.json.json
 
 class CircleController(val circleDao : CircleDao) {
     fun getCircles(context: RoutingContext) {

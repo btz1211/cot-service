@@ -7,7 +7,7 @@ import io.vertx.kotlin.core.json.array
 import io.vertx.kotlin.core.json.json
 
 class CircleDao(private val client : JDBCClient){
-    private val GET_CIRCLE_QUERY = "select * from circles where id = ?"
+    private val GET_CIRCLE_QUERY = "SELECT * FROM circles WHERE id = ?"
 
     fun getCircle(id : String, resultHandler : (AsyncResult<ResultSet>) -> Unit ) {
         client.queryWithParams(GET_CIRCLE_QUERY,  json { array(id) }, resultHandler)
