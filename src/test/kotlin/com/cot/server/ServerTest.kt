@@ -9,7 +9,6 @@ import io.vertx.core.Vertx
 import io.vertx.core.json.JsonObject
 import io.vertx.ext.unit.TestContext;
 import io.vertx.ext.unit.junit.VertxUnitRunner
-import kotlin.test.assertTrue
 
 
 @RunWith(VertxUnitRunner::class)
@@ -39,7 +38,7 @@ class ServerTest {
         vertx.createHttpClient().getNow(8080, "localhost", "/ping"
         ) { response ->
             response.handler { body ->
-                assertTrue(body.toString().contains("OK"))
+                context.assertTrue(body.toString().contains("OK"))
                 async.complete()
             }
         }

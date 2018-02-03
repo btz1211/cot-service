@@ -21,6 +21,7 @@ buildscript {
 }
 
 repositories {
+    jcenter()
     mavenCentral()
 }
 
@@ -36,6 +37,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     testCompile 'com.h2database:h2:1.4.196'
     testCompile 'org.dbunit:dbunit:2.5.1'
+    testCompile "io.mockk:mockk:1.7.1"
     testCompile "io.vertx:vertx-unit:$vertx_version"
     testCompile "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
     testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
