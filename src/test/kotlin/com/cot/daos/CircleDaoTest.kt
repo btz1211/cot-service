@@ -20,6 +20,8 @@ class CircleDaoTest {
     private val vertx = Vertx.vertx()
     private lateinit var circleDao : CircleDao
 
+    // kotlin does not have static methods, therefore this companion object is
+    // necessary for @BeforeClass method
     companion object {
         private val JDBC_DRIVER = "org.h2.Driver"
         private val JDBC_URL = "jdbc:h2:mem:test;DB_CLOSE_DELAY=-1"

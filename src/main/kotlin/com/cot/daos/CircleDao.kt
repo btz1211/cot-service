@@ -12,7 +12,7 @@ class CircleDao(private val client : JDBCClient){
     fun getCircle(id : String): Future<ResultSet> {
         val resultFuture : Future<ResultSet> = Future.future()
 
-        client.queryWithParams(GET_CIRCLE_QUERY,  json { array(id) }, { result ->
+        client.queryWithParams(GET_CIRCLE_QUERY, json { array(id) }, { result ->
 
             when {
                 result.succeeded() -> resultFuture.complete(result.result())
